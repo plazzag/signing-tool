@@ -9,8 +9,6 @@
 
 __Requirement__: macOS 10.13 High Sierra or higher
 
-Small tool to simplify manual signing processes of iOS apps.
-
 ### Development Environment
 * macOS 10.13 High Sierra
 * Xcode 9.3
