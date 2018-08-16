@@ -1,5 +1,5 @@
 <div align="center">
-<img src="/SigningTool/Assets.xcassets/AppIcon.appiconset/icon_128@2x.png" alt="Signing Tool Logo"><br>
+<img src="/SigningTool/Assets.xcassets/AppIcon.appiconset/icon_128@2x.png" alt="Signing Tool Logo"><br><br>
 
 
 [![License](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://github.com/fastlane/fastlane/blob/master/LICENSE)
