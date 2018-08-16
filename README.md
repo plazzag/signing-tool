@@ -35,7 +35,7 @@ With the **MEA Signing Tool** you have the possibility to sign the **Mobile Even
 
 First of all you need your individual **Mobile Event App**, which you can get from our support team. You will receive either a **.ipa** or **.xcarchive** file that you can use with this tool.
 
-<img style="float: right; margin:0 10px 10px 0" src="SupportingFiles/Requirements.png">
+<img align="right" src="SupportingFiles/Requirements.png">
 
 After opening the **MEA Signing Tool** , it checks various preconditions. These requirements are indicated with a green or red status icon.
 
