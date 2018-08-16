@@ -25,6 +25,22 @@ There's two main ways to install **MEA Signing Tool**:
 1. Download the [latest release](https://github.com/plazzag/signing-tool/releases), open the **SigningTool.pkg** and install the application to your `/Applications` folder.
 2. Build it from source, but this is not recommended if your are only going to use **MEA Signing Tool** in the regular way. 
 
+## Compile instructions
+
+In order to compile the app to **macOS** you'll need an Apple Developer account. You can get yours at the [Apple Developer Portal](https://developer.apple.com). Below you'll find compile instructions.
+
+**macOS**
+
+- Download the project ZIP or clone this repo in your machine.
+- Open the project on **Xcode**
+- Enter the project config page by:
+    - Clicking the project name just below Xcode window controls
+    - Go to **General** tab and just below **Targets** you'll see one entry: `Signing Tool`. Make sure to select this entry. 
+    - Under **Identity** you'll find a field named `Bundle Identifier`. Change it accordingly (i.e.: **com.yourName.signingtool**)
+    - Under signing select your Team and, if `Automatically manage signing` is selected **Xcode** will handle signing
+    - Everything should now be ready
+- Build and run the app
+
 ## How does it work?
 
 <p align="center">
@@ -57,8 +73,13 @@ The **Mobile Event App** needs an App-ID configured to the following services:
 * Push Notifications: enabled
 * Wallet: enabled
 
-If all requirements are fulfilled, the app can be signed by clicking "Create App". The bundle identifier of the iOS app is automatically adapted to the bundle identifier in the Provisioning Profile. 
+If all requirements are fulfilled, the app can be signed by clicking "Create App". The bundle identifier of the iOS app is automatically adapted to the bundle identifier in the Provisioning Profile.
+
+## Known bugs
+None at the moment.
 
 ## License
 
 This project is licensed under the terms of the MIT license. See the [LICENSE](LICENSE) file.
+
+The copying and use of the Mobile Event App logo, and, or, any other logos accessed via the project are not permitted without prior approval from the licensee or copyright owner. 
