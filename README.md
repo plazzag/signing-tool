@@ -2,7 +2,7 @@
 <img src="/SigningTool/Assets.xcassets/AppIcon.appiconset/icon_128@2x.png" alt="Signing Tool Logo"><br><br>
 
 
-[![License](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://github.com/fastlane/fastlane/blob/master/LICENSE)
+[![License](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://github.com/plazzag/signing-tool/blob/master/LICENSE)
 ![version](https://img.shields.io/badge/macOS-10.13+-green.svg?style=flat)
 [![Swift](https://img.shields.io/badge/Swift-4.1-orange.svg?style=flat)](https://developer.apple.com/swift/)
 </div>
