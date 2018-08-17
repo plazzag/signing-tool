@@ -53,7 +53,7 @@ First of all you need your individual **Mobile Event App**, which you can get fr
 
 <img align="right" src="SupportingFiles/Requirements.png">
 
-After opening the **MEA Signing Tool** , it checks various preconditions. These requirements are indicated with a green or red status icon.
+After opening the **MEA Signing Tool**, it checks various preconditions. These requirements are indicated with a green or red status icon.
 
 All requirements must be satisfied for the tool to be used properly. On startup, the Xcode Command Line Tools are searched for. If they are not installed, please install them.</p>
 
@@ -80,7 +80,7 @@ In summary, here is a checklist with what you need:
 * [ ] This **MEA Signing Tool**
 * [ ] Your individual **Mobile Event App** .ipa or .xcarchive file 
 * [ ] Your properly configured provisioning profile 
-* [ ] Your distribution certificate including the private key with which the profile was created must be present in the keychain your Mac
+* [ ] Your distribution certificate including the private key with which the profile was created must be present in the keychain on your Mac
 * [ ] Xcode Command Line Tools must be present on your Mac
 
 ## Known bugs
