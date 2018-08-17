@@ -75,6 +75,14 @@ The **Mobile Event App** needs an App-ID configured to the following services:
 
 If all requirements are fulfilled, the app can be signed by clicking "Create App". The bundle identifier of the iOS app is automatically adapted to the bundle identifier in the Provisioning Profile.
 
+In summary, here is a checklist with what you need:
+
+* [ ] This **MEA Signing Tool**
+* [ ] Your individual **Mobile Event App** .ipa or .xcarchive file 
+* [ ] Your properly configured provisioning profile 
+* [ ] Your distribution certificate including the private key with which the profile was created must be present in the keychain your Mac
+* [ ] Xcode Command Line Tools must be present on your Mac
+
 ## Known bugs
 None at the moment.
 
