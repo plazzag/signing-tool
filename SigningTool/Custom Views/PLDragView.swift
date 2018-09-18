@@ -52,7 +52,7 @@ class PLDragView: NSView {
         acceptedFileType = checkExtension(drag: sender)
         isReceivingDrag = acceptedFileType
         
-        let filenames = sender.draggingPasteboard().propertyList(forType: NSPasteboard.PasteboardType("NSFilenamesPboardType")) as? [String]
+        let filenames = sender.draggingPasteboard.propertyList(forType: NSPasteboard.PasteboardType("NSFilenamesPboardType")) as? [String]
         if (filenames?.count)! > 1 {
             acceptedFileType = false
             isReceivingDrag = acceptedFileType
@@ -104,7 +104,7 @@ class PLDragView: NSView {
 
 extension NSDraggingInfo {
     var draggedFileURL: NSURL? {
-        let filenames = draggingPasteboard().propertyList(forType: NSPasteboard.PasteboardType("NSFilenamesPboardType")) as? [String]
+        let filenames = draggingPasteboard.propertyList(forType: NSPasteboard.PasteboardType("NSFilenamesPboardType")) as? [String]
         let path = filenames?.first
         
         return path.map(NSURL.init)

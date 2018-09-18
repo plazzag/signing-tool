@@ -31,8 +31,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     fileprivate var mainWindowController: NSWindowController!
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        let mainStoryboard = NSStoryboard(name: NSStoryboard.Name(rawValue: "Main"), bundle: nil)
-        mainWindowController = mainStoryboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "MainWindowController")) as! NSWindowController
+        let mainStoryboard = NSStoryboard(name: "Main", bundle: nil)
+        mainWindowController = mainStoryboard.instantiateController(withIdentifier: "MainWindowController") as? NSWindowController
         mainWindowController.window?.makeKeyAndOrderFront(self)
         
         NotificationCenter.default.addObserver(forName: NSWindow.willCloseNotification, object: mainWindowController.window, queue: OperationQueue.main) { _ in

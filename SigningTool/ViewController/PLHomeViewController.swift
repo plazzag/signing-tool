@@ -148,7 +148,7 @@ class PLHomeViewController: NSViewController {
         resetInfoLabel.isHidden = true
         buildButton.isEnabled = false
         appStoreRadioButton.state = .on
-        logoView.image = NSImage(named: NSImage.Name(rawValue: "mea_logo"))?.imageWithTintColor(tintColor: NSColor.secondaryLabelColor)
+        logoView.image = NSImage(named: "mea_logo")?.imageWithTintColor(tintColor: NSColor.secondaryLabelColor)
         
         if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String, let build = Bundle.main.infoDictionary?["CFBundleVersion"] as? String {
             versionLabel.stringValue = "\(version) (\(build))"
