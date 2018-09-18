@@ -57,23 +57,45 @@ After opening the **MEA Signing Tool**, it checks various preconditions. These r
 
 All requirements must be satisfied for the tool to be used properly. On startup, the Xcode Command Line Tools are searched for. If they are not installed, please install them.</p>
 
+For the other two requirements drag and drop the corresponding files into the marked area inside the **MEA Signing Tool**.
+
+If all requirements are fulfilled, the app can be signed by clicking "Create App". The bundle identifier of the iOS app is automatically adapted to the bundle identifier in the Provisioning Profile.
+
+## Help
+
 **Installing Command Line Tools in macOS**
 
 1. Launch the Terminal, found in /Applications/Utilities/
 2. Type the following command string: ```xcode-select --install```
 3. A software update popup window will appear that asks: "The xcode-select command requires the command line developer tools. Would you like to install the tools now?" Confirm this by clicking "Install".
 
-For the other two requirements drag and drop the corresponding files into the marked area inside the **MEA Signing Tool**.
+**Create and download a properly configured Provisioning Profile**
 
-You can create and download your own Provisioning Profile from the [Apple Developer Portal](https://developer.apple.com). In order for this tool to be able to use the profile for signing, the appropriate Distribution Certificate must also be installed on the Keychain of your Mac. The Distribution Certificate consists of a public-private key pair that Apple creates for you. **The private key must be present in the Keychain!**
+You can create and download your own Provisioning Profile from the [Apple Developer Portal](https://developer.apple.com). In order for this tool to be able to use the profile for signing, the appropriate Distribution Certificate must also be installed on the Keychain of your Mac. The Distribution Certificate consists of a public-private key pair that Apple creates for you. **The private key must be present in the Keychain!** If you do not have a distribution certificate yet, you can also create one in the [Apple Developer Portal](https://developer.apple.com).
 
-The **Mobile Event App** needs an App-ID configured to the following services:
+The **Mobile Event App** needs an App ID configured to the following services:
 
 * Data Protection: Protected Until First User Authentication
 * Push Notifications: enabled
 * Wallet: enabled
 
-If all requirements are fulfilled, the app can be signed by clicking "Create App". The bundle identifier of the iOS app is automatically adapted to the bundle identifier in the Provisioning Profile.
+To do so proceed with the following steps:
+
+1. Go to the [Apple Developer Portal](https://developer.apple.com). Log in Apple Developer Center, then click "Certificates, Identifiers & Profiles".
+2. Create New App ID. Click "Identifiers" under iOS Apps. Click on the "+" sign near the top right corner to add a new App ID. In the next screen you will be asked to create the App ID you want to use as well as the description you want to give it.
+3. Select App Services. In addition to what Apple selects on your behalf, add Data Protection, Push Notifications and Wallet as described above.
+4. Register your App ID. Once you click "Continue", you will see the confirmation screen. Click "Submit" to create the app ID.
+
+When your App ID is configured properly your can create a fresh Provisioning Profile with the following steps:
+
+1. Go to the [Apple Developer Portal](https://developer.apple.com). Log in Apple Developer Center, then click "Certificates, Identifiers & Profiles".
+2. On the left tab under Provisioning Profiles, select Distribution. Select add button "+" at the top right to create a new profile. Select "App Store" or "In House" and press Continue.
+3. Select App ID and press "Continue".
+4. Select the Distribution Certificate you wish to include in this provisioning profile (the certificate the app should signed with) and click "Continue".
+5. Create a name for your profile and click "Generate".
+6. Download the your profile to your Mac.
+
+**Checklist**
 
 In summary, here is a checklist with what you need:
 
