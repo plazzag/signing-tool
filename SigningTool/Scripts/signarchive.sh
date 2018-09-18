@@ -36,7 +36,7 @@ echo "Signing process started"
 mkdir Payload
 cp -r "$archive"/Products/Applications/MEA.app Payload
 if ! [[ -e Payload/MEA.app/Info.plist ]]; then
-    echo "There is an issue with the .ipa. Please contact your contact person at plazz AG."
+    echo "There is an issue with the .xcarchive. Please contact your contact person at plazz AG."
     exit 1;
 fi
 
