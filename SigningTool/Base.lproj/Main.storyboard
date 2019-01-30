@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14113"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14460.31"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
-        <capability name="system font weights other than Regular or Bold" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -686,7 +686,7 @@
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController storyboardIdentifier="MainWindowController" id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" titlebarAppearsTransparent="YES" titleVisibility="hidden" id="IQv-IB-iLA">
+                    <window key="window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" titlebarAppearsTransparent="YES" titleVisibility="hidden" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" fullSizeContentView="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="570"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
@@ -935,20 +935,20 @@
                                     </textField>
                                     <scrollView hidden="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gbd-u5-hb4">
                                         <rect key="frame" x="125" y="125" width="335" height="80"/>
-                                        <clipView key="contentView" id="iXJ-B3-h5p">
+                                        <clipView key="contentView" drawsBackground="NO" id="iXJ-B3-h5p">
                                             <rect key="frame" x="0.0" y="0.0" width="335" height="80"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <textView editable="NO" importsGraphics="NO" verticallyResizable="YES" usesFontPanel="YES" findStyle="panel" allowsCharacterPickerTouchBarItem="NO" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" textCompletion="NO" id="TSZ-lF-xIR">
                                                     <rect key="frame" x="0.0" y="0.0" width="335" height="80"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                     <size key="minSize" width="335" height="80"/>
                                                     <size key="maxSize" width="463" height="10000000"/>
-                                                    <color key="insertionPointColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                 </textView>
                                             </subviews>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </clipView>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" id="aku-WV-VPS"/>
@@ -1168,8 +1168,8 @@
                                         <rect key="frame" x="20" y="490" width="510" height="40"/>
                                         <subviews>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ezg-rl-H8k">
-                                                <rect key="frame" x="20" y="8" width="470" height="24"/>
-                                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Quick Start Guide" drawsBackground="YES" id="Qf3-t7-Tg2">
+                                                <rect key="frame" x="18" y="8" width="474" height="24"/>
+                                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Quick Start Guide" id="Qf3-t7-Tg2">
                                                     <font key="font" metaFont="systemBold" size="20"/>
                                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="backgroundColor" name="secondarySelectedControlColor" catalog="System" colorSpace="catalog"/>
@@ -1190,22 +1190,22 @@
                                         </userDefinedRuntimeAttributes>
                                     </customView>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDA-jG-6FV">
-                                        <rect key="frame" x="20" y="463" width="510" height="17"/>
+                                        <rect key="frame" x="18" y="463" width="514" height="17"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="17" id="cYK-WJ-lcw"/>
                                         </constraints>
-                                        <textFieldCell key="cell" allowsUndo="NO" sendsActionOnEndEditing="YES" title="1. Install Xcode Command Line Tools" drawsBackground="YES" id="TLZ-lF-puD">
+                                        <textFieldCell key="cell" allowsUndo="NO" sendsActionOnEndEditing="YES" title="1. Install Xcode Command Line Tools" id="TLZ-lF-puD">
                                             <font key="font" metaFont="systemBold"/>
                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                            <color key="backgroundColor" name="windowBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
                                     </textField>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HvN-cs-H4H">
-                                        <rect key="frame" x="20" y="309" width="510" height="144"/>
+                                        <rect key="frame" x="18" y="309" width="514" height="144"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="144" id="knT-Oc-Te8"/>
                                         </constraints>
-                                        <textFieldCell key="cell" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="left" drawsBackground="YES" id="ZqC-hi-Gy4">
+                                        <textFieldCell key="cell" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="left" id="ZqC-hi-Gy4">
                                             <font key="font" metaFont="system"/>
                                             <string key="title">• Open a Terminal window by starting the Terminal app
 	• Using the Launcher, it is located in the Other section
@@ -1220,22 +1220,22 @@
                                         </textFieldCell>
                                     </textField>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="raf-EM-jL5">
-                                        <rect key="frame" x="20" y="282" width="510" height="17"/>
+                                        <rect key="frame" x="18" y="282" width="514" height="17"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="17" id="IJk-bJ-Lj1"/>
                                         </constraints>
-                                        <textFieldCell key="cell" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="left" title="2. Load your Application File" drawsBackground="YES" id="WR7-GP-0FV">
+                                        <textFieldCell key="cell" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="left" title="2. Load your Application File" id="WR7-GP-0FV">
                                             <font key="font" metaFont="systemBold"/>
                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="windowBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
                                     </textField>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SXZ-Jh-R3d">
-                                        <rect key="frame" x="20" y="236" width="510" height="36"/>
+                                        <rect key="frame" x="18" y="236" width="514" height="36"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="36" id="kFI-nV-dcp"/>
                                         </constraints>
-                                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" drawsBackground="YES" id="09l-AN-8hW">
+                                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" id="09l-AN-8hW">
                                             <font key="font" metaFont="system"/>
                                             <string key="title">• Drag and drop your .ipa or .xcarchive file into the marked area inside this app
 	• Only files from plazz AG are supported</string>
@@ -1244,22 +1244,22 @@
                                         </textFieldCell>
                                     </textField>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HoJ-av-A81">
-                                        <rect key="frame" x="20" y="203" width="510" height="17"/>
+                                        <rect key="frame" x="18" y="203" width="514" height="17"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="17" id="CFr-eV-K3x"/>
                                         </constraints>
-                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" allowsUndo="NO" sendsActionOnEndEditing="YES" title="3. Load your Mobile Provisioning File" drawsBackground="YES" id="fdL-Sv-uO2">
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" allowsUndo="NO" sendsActionOnEndEditing="YES" title="3. Load your Mobile Provisioning File" id="fdL-Sv-uO2">
                                             <font key="font" metaFont="systemBold"/>
                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="windowBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
                                     </textField>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Lt-98-TR8">
-                                        <rect key="frame" x="20" y="49" width="510" height="144"/>
+                                        <rect key="frame" x="18" y="49" width="514" height="144"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="144" id="bMn-pZ-hpx"/>
                                         </constraints>
-                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" allowsUndo="NO" sendsActionOnEndEditing="YES" drawsBackground="YES" id="JMW-qD-V6s">
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" allowsUndo="NO" sendsActionOnEndEditing="YES" id="JMW-qD-V6s">
                                             <font key="font" metaFont="system"/>
                                             <string key="title">• Drag and drop your .mobileprovision file into the marked area inside this app
 	• Login to the Apple Developer Portal
@@ -1274,8 +1274,8 @@
                                         </textFieldCell>
                                     </textField>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="91d-iS-2s0">
-                                        <rect key="frame" x="20" y="20" width="510" height="19"/>
-                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="center" title="For further informations please refer to the user manual included to this app." drawsBackground="YES" id="uUG-XL-q82">
+                                        <rect key="frame" x="18" y="20" width="514" height="19"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="center" title="For further informations please refer to the user manual included to this app." id="uUG-XL-q82">
                                             <font key="font" metaFont="system"/>
                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="windowBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -1319,11 +1319,6 @@
                             <constraint firstItem="6Pa-04-fzP" firstAttribute="top" secondItem="84T-ky-0rv" secondAttribute="top" id="dze-YZ-dy6"/>
                             <constraint firstAttribute="trailing" secondItem="6Pa-04-fzP" secondAttribute="trailing" id="mti-qW-1A5"/>
                         </constraints>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="color" keyPath="backgroundColor">
-                                <color key="value" name="windowBackgroundColor" catalog="System" colorSpace="catalog"/>
-                            </userDefinedRuntimeAttribute>
-                        </userDefinedRuntimeAttributes>
                     </view>
                     <connections>
                         <outlet property="headerView" destination="Fyq-O9-uHc" id="sqr-TD-6tJ"/>
