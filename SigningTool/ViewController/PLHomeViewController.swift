@@ -307,6 +307,7 @@ class PLHomeViewController: NSViewController {
         appFileProvided = false
         provisioningProfilePath = nil
         provisioningFileProvided = false
+        imageView.image = nil
         
         //Check xcode command line tools
         let task = Process()
@@ -391,6 +392,32 @@ class PLHomeViewController: NSViewController {
                 task.waitUntilExit()
                 
                 let status = task.terminationStatus
+                
+                if status == 0 {
+                    var fileExists = fileManager.fileExists(atPath: appFolder.appendingPathComponent("Payload").path, isDirectory: &isDirectory)
+                    if fileExists {
+                        do {
+                            try fileManager.removeItem(atPath: appFolder.appendingPathComponent("Payload").path)
+                        } catch {
+                            return status == 0
+                        }
+                    }
+                    
+                    fileExists = fileManager.fileExists(atPath: appFolder.appendingPathComponent("Symbols").path, isDirectory: &isDirectory)
+                    if fileExists {
+                        do {
+                            try fileManager.removeItem(atPath: appFolder.appendingPathComponent("Symbols").path)
+                        } catch {
+                            return status == 0
+                        }
+                    }
+                    
+                    let unzipProcess = Process.launchedProcess(launchPath: "/usr/bin/unzip", arguments: ["-o", appFilePath?.relativePath ?? appFolder.appendingPathComponent("app.zip").relativePath, "-d", appFolder.relativePath])
+                    unzipProcess.waitUntilExit()
+                    
+                    imageView.image = NSImage(contentsOf: appFolder.appendingPathComponent("Payload/MEA.app/AppIcon83.5x83.5@2x~ipad.png"))
+                }
+                
                 return status == 0
             }
             
@@ -419,6 +446,11 @@ class PLHomeViewController: NSViewController {
                 task.waitUntilExit()
                 
                 let status = task.terminationStatus
+                
+                if status == 0 {
+                    imageView.image = NSImage(contentsOf: appFolder.appendingPathComponent("Payload/MEA.app/AppIcon83.5x83.5@2x~ipad.png"))
+                }
+                
                 return status == 0
             }
         }
