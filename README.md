@@ -4,7 +4,7 @@
 
 [![License](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://github.com/plazzag/signing-tool/blob/master/LICENSE)
 ![version](https://img.shields.io/badge/macOS-10.13+-green.svg?style=flat)
-[![Swift](https://img.shields.io/badge/Swift-4.2-orange.svg?style=flat)](https://developer.apple.com/swift/)
+[![Swift](https://img.shields.io/badge/Swift-5-orange.svg?style=flat)](https://developer.apple.com/swift/)
 </div>
 
 # Mobile Event App Signing Tool
@@ -13,8 +13,8 @@ __Requirement__: macOS 10.13 High Sierra or higher
 
 ### Development Environment
 * macOS 10.13 High Sierra
-* Xcode 10
-* Swift 4.2
+* Xcode 10.2
+* Swift 5
 
 ## What is MEA Signing Tool?
 **MEA Signing Tool** is a tool that allows you to simplify the manual signing processes of your custom **Mobile Event App** with your own Provisioning Profiles.
