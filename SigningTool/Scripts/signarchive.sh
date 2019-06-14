@@ -106,11 +106,11 @@ if [[ "$pushCheck" = "production" ]];
         exit 1;
 fi
 sleep 1
-if [[ "$dataProtectionCheck" = "NSFileProtectionCompleteUntilFirstUserAuthentication" ]];
+if [[ "$dataProtectionCheck" = "NSFileProtectionComplete" ]];
     then
-        echo "NSFileProtectionCompleteUntilFirstUserAuthentication is enabled for use on this provisioning profile."
+        echo "NSFileProtectionComplete is enabled for use on this provisioning profile."
     else
-        echo "This provisioning profile doesn't have file data protection NSFileProtectionCompleteUntilFirstUserAuthentication enabled! This entitlement is required by this app and can be enabled from developer.apple.com. It will require a new provisoining profile after the App ID is updated to include NSFileProtectionCompleteUntilFirstUserAuthentication."
+        echo "This provisioning profile doesn't have file data protection NSFileProtectionComplete enabled! This entitlement is required by this app and can be enabled from developer.apple.com. It will require a new provisoining profile after the App ID is updated to include NSFileProtectionComplete."
         exit 1;
 fi
 
