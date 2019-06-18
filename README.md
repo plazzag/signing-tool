@@ -75,7 +75,7 @@ You can create and download your own Provisioning Profile from the [Apple Develo
 
 The **Mobile Event App** needs an App ID configured to the following services:
 
-* Data Protection: Protected Until First User Authentication
+* Data Protection: Complete
 * Push Notifications: enabled
 * Wallet: enabled
 
