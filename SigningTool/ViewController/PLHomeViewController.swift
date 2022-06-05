@@ -415,7 +415,7 @@ class PLHomeViewController: NSViewController {
                     let unzipProcess = Process.launchedProcess(launchPath: "/usr/bin/unzip", arguments: ["-o", appFilePath?.relativePath ?? appFolder.appendingPathComponent("app.zip").relativePath, "-d", appFolder.relativePath])
                     unzipProcess.waitUntilExit()
                     
-                    imageView.image = NSImage(contentsOf: appFolder.appendingPathComponent("Payload/MEA.app/AppIcon83.5x83.5@2x~ipad.png"))
+                    imageView.image = NSImage(contentsOf: appFolder.appendingPathComponent("Payload/MEA.app/AppIcon76x76@2x~ipad.png"))
                 }
                 
                 return status == 0
@@ -448,7 +448,7 @@ class PLHomeViewController: NSViewController {
                 let status = task.terminationStatus
                 
                 if status == 0 {
-                    imageView.image = NSImage(contentsOf: appFolder.appendingPathComponent("app.xcarchive/Products/Applications/MEA.app/AppIcon83.5x83.5@2x~ipad.png"))
+                    imageView.image = NSImage(contentsOf: appFolder.appendingPathComponent("app.xcarchive/Products/Applications/MEA.app/AppIcon76x76@2x~ipad.png"))
                 }
                 
                 return status == 0
