@@ -30,9 +30,9 @@ if [[ -z "$app" || -z "$profileFile" || -z "$store" ]]; then
     exit 1;
 fi
 
-rm -rf app.plist identity.txt validation.txt Payload/
-echo "Signing process started"
+rm -rf app.plist identity.txt validation.txt Payload/ developerCertificate.cer
 
+echo "Signing process started"
 unzip "$app" >&-
 if ! [[ -e Payload/MEA.app/Info.plist ]]; then
     echo "There is an issue with the .ipa. Please contact your contact person at plazz AG."
@@ -117,13 +117,10 @@ fi
 cp "$profileFile" Payload/MEA.app/embedded.mobileprovision
 
 /usr/libexec/PlistBuddy -c "Set CFBundleIdentifier $reverseUrl" Payload/MEA.app/Info.plist
+    
+/usr/libexec/PlistBuddy -c "Print DeveloperCertificates:0" app.plist > developerCertificate.cer
+certFingerprint=$(openssl x509 -inform der -in developerCertificate.cer -noout -fingerprint | cut -d '=' -f2 | sed 's/://g')
 
-certHash=$(cat app.plist \
-    | sed -ne 's/^.*<data>\(.*\)<\/data>.*$/\1/p' \
-    | base64 -D \
-    | shasum \
-    | cut -d  " " -f1 \
-    | tr '[:lower:]' '[:upper:]')
 /usr/bin/security find-identity -v -p codesigning > identity.txt
 countOfSigningIdentities=$(cat identity.txt \
     | grep "valid identities found" \
@@ -136,12 +133,12 @@ else
     exit 1;
 fi
 
-certHashCount=$(grep "$certHash" identity.txt | wc -l | tr -d [:blank:]) 
+certHashCount=$(grep "$certFingerprint" identity.txt | wc -l | tr -d [:blank:])
 if ! [[ "$certHashCount" == "0" ]]; then
         echo "Distribution Certificate present for $teamNameProvisioningProfile"
         echo "Codesigning the App"
-        codesign -fs "$certHash" Payload/MEA.app/Frameworks/*.framework >/dev/null
-        codesign -fs "$certHash" --entitlements entitlements.plist Payload/MEA.app >/dev/null
+        codesign -fs "$certFingerprint" Payload/MEA.app/Frameworks/*.framework >/dev/null
+        codesign --generate-entitlement-der -fs "$certFingerprint" --entitlements entitlements.plist Payload/MEA.app >/dev/null
 elif [[ "$certHashCount" == "0" ]]; then
     echo "The correct distribution certificate is not present in Keychain Access. Match the expiry date, which is $expiryDate."
     exit 1;
@@ -187,4 +184,4 @@ fi
 echo "The finished file is on your Desktop in a folder called SigningTool_Output-$datevar"
 open ~/Desktop/SigningTool_Output-$datevar
 
-rm -rf "$app" "$profileFile" app.plist identity.txt validation.txt Payload/
+rm -rf "$app" "$profileFile" app.plist identity.txt validation.txt Payload/ developerCertificate.cer
